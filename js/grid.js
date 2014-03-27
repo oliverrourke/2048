@@ -1,7 +1,7 @@
 function Grid(size) {
   this.size = size;
   this.startTiles   = 2;
-  this.spawn = 1; //0 for random, 1 for first, 2 for evil
+  this.spawn = 0; //0 for random, 1 for first, 2 for evil
 
   this.cells = [];
 

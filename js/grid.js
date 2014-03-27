@@ -240,7 +240,7 @@ Grid.prototype.computerMove = function() {
   else if (this.spawn==1){
     cells = this.cellsAvailable();
     if (cells){
-      var value = 2;
+      var value = 4;
       var tile = new Tile(cells[0], value);
       this.insertTile(tile);
       

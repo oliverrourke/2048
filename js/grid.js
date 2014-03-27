@@ -1,7 +1,7 @@
 function Grid(size) {
   this.size = size;
   this.startTiles   = 2;
-  this.spawn = 0; //0 for random, 1 for first, 2 for evil
+  this.spawn = 1; //0 for random, 1 for first, 2 for evil
 
   this.cells = [];
 
@@ -237,6 +237,15 @@ Grid.prototype.move = function (direction) {
 
 Grid.prototype.computerMove = function() {
   if (this.spawn==0){this.addRandomTile();}
+  else if (this.spawn==1){
+    cells = this.cellsAvailable();
+    if (cells){
+      var value = 2;
+      var tile = new Tile(cells[0], value);
+      this.insertTile(tile);
+      
+    }
+  }
   this.playerTurn = true;
 }
 

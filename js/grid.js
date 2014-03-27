@@ -121,7 +121,7 @@ Grid.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 Grid.prototype.addRandomTile = function () {
   if (this.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 8 : 4;
+    var value = Math.random() < 0.9 ? 2 : 4;
     //var value = Math.random() < 0.9 ? 256 : 512;
     var tile = new Tile(this.randomAvailableCell(), value);
 
@@ -236,11 +236,11 @@ Grid.prototype.move = function (direction) {
 };
 
 Grid.prototype.computerMove = function() {
-  if (this.spawn==0){this.addRandomTile();}
+  if (this.spawn == 0){this.addRandomTile();}
   else if (this.spawn==1){
     cells = this.cellsAvailable();
     if (cells){
-      var value = 2;
+      var value = 16;
       var tile = new Tile(cells[0], value);
       this.insertTile(tile);
       
